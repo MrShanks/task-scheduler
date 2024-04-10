@@ -1,8 +1,9 @@
 package main
 
 type Task struct {
-	title string
-	desc  string
+	title    string
+	desc     string
+	execTime string
 }
 
 func NewTask(options ...func(*Task) *Task) Task {
@@ -23,6 +24,13 @@ func WithTitle(title string) func(*Task) *Task {
 func WithDesc(desc string) func(*Task) *Task {
 	return func(t *Task) *Task {
 		t.desc = desc
+		return t
+	}
+}
+
+func WithExecTime(execTime string) func(*Task) *Task {
+	return func(t *Task) *Task {
+		t.execTime = execTime
 		return t
 	}
 }
