@@ -13,19 +13,19 @@ func TestNewTask(t *testing.T) {
 	})
 
 	t.Run("New Task WithTitle has title test", func(t *testing.T) {
-		want := Task{title: "test"}
+		want := Task{Title: "test"}
 		got := NewTask(WithTitle("test"))
 
-		if got.title != want.title {
+		if got.Title != want.Title {
 			t.Errorf("Expected %v, got %v", want, got)
 		}
 	})
 
 	t.Run("New Task WithDesc has desc test", func(t *testing.T) {
-		want := Task{desc: "test"}
+		want := Task{Desc: "test"}
 		got := NewTask(WithDesc("test"))
 
-		if got.desc != want.desc {
+		if got.Desc != want.Desc {
 			t.Errorf("Expected %v, got %v", want, got)
 		}
 	})
